@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Edit Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="navbar-header navbar-title">
+                        <a class="navbar-brand navbar-title" href="#">Edit Profile</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/homepage">Home</a></li>
+                        <li><a href="/statistics">Statistics</a></li>
+                        <li class="active"><a href="/profile">Profile</a></li>
+                        <li class="active"><a href="/checkContact">Check Covid Contacts</a></li>
+                        <li><a href="/userLogout">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <%if(messages.length){%>
+        <div class="alert alert-warning alert" role="alert">
+          <%= messages %>
+        </div>
+        <%}%>
+    <div class="container bootstrap snippets bootdey">
+        <h1 class="text-primary animation a1">Edit Profile</h1>
+        <hr> 
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3 animation a2">
+                <div class="text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                </div>
+            </div>
+            <!-- edit form column -->
+            <div class="col-lg-9 personal-info animation a2">
+                <h3>Update your personal info</h3>
+                <form action="/editProfile" method="post">
+                    <div class="row input-field">
+                            <label class="col-lg-2 control-label" for="username">Username</label>
+                            <div class="col-lg-5">
+                                <input type="text" name="username" id="username" class="form-control col-lg-6" placeholder="Enter new username">
+                            </div>
+                    </div>
+                    <div class="row input-field">
+                      <label class="col-lg-2 control-label">Email</label>
+                      <div class="col-lg-5">
+                        <div class="well well-sm"><%=email %></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                            <label class="col-lg-2 control-label" for="password">Password</label>
+                            <div class="col-lg-5">
+                                <input type="password" name="password" id="password" class="form-control col-lg-6" placeholder="Enter new password">
+                            </div>
+                    </div>
+                    <div class="row input-field">
+                        <div class="col-lg-4">
+                            <button class="btn btn-primary btn-block mb-4 button">Update</button>
+                        </div>
+                    </div>
+                    
+                </form>
+            </div>
+        </div>
+    </div>
+</body>

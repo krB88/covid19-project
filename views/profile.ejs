@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Profile</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col">
+                    <div class="navbar-header navbar-title">
+                        <a class="navbar-brand navbar-title" href="#">Profile</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/homepage">Home</a></li>
+                        <li class="active"><a href="/profile">Profile</a></li>
+                        <li><a href="/checkContact">Check Covid Contacts</a></li>
+                        <li><a href="/userLogout">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container bootstrap snippets bootdey">
+        <h3 class="text-primary animation a1">User Profile</h3>
+        <hr> 
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3">
+                <div class="text-center animation a2">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png" class="avatar img-circle img-thumbnail" alt="avatar">
+                </div>
+            </div>
+            <!-- edit form column -->
+            <div class="col-lg-9 personal-info animation a2">
+                <h3>Personal Info</h3>
+                    <div class="row input-field">
+                        <label class="col-lg-2 control-label animation a2" for="username">Username</label>
+                        <div class="col-lg-5">
+                            <div class="well well-sm form-control col-lg-6"><center><%=username %></center></div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-lg-2 control-label animation a2">Email</label>
+                      <div class="col-lg-5">
+                        <div class="well well-sm form-control col-lg-6"><center><%=email %></center></div>
+                      </div>
+                    </div>
+                    <div class="row">
+                        <label class="col-lg-2 control-label animation a2">Password</label>
+                        <div class="col-lg-5">
+                            <div class="well well-sm form-control col-lg-6"><center>*******</center></div>
+                        </div>
+                    </div> 
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <a class="btn btn-primary button" href="/editProfile" role="button">Update Credentials</a>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-9 title">
+                            <h3>Covid Infected</h3>
+                        </div>
+                    </div>
+                    <div class="row input-field">
+                        <label class="col-lg-2 control-label" for="covid_infected">Infected</label>
+                        <div class="col-lg-5">
+                            <div class="well well-sm form-control col-lg-6"><center><%=positive%></center> </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <a class="btn btn-primary button" href="/editCovidStatus" role="button">Update Covid Status</a>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</body>

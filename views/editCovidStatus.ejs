@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Edit Profile</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/css/bootstrap-datepicker.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.9.0/js/bootstrap-datepicker.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="navbar-header navbar-title">
+                        <a class="navbar-brand navbar-title" href="#">Edit Profile</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/homepage">Home</a></li>
+                        <li><a href="/statistics">Statistics</a></li>
+                        <li class="active"><a href="/profile">Profile</a></li>
+                        <li class="active"><a href="/checkContact">Check Covid Contacts</a></li>
+                        <li><a href="/userLogout">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container bootstrap snippets bootdey">
+        <h1 class="text-primary">Covid Statement</h1>
+        <hr>
+        <div class="row">
+            <!-- left column -->
+            <div class="col-md-3">
+                <div class="text-center">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar7.png"
+                        class="avatar img-circle img-thumbnail" alt="avatar">
+                </div>
+            </div>
+            <!-- edit form column -->
+            <div class="col-lg-9 personal-info">
+                <h3>Covid Status</h3>
+                <form action="/editCovidStatus" method="post">
+                    <div class="row input-field">
+                        <label class="col-lg-2 control-label" for="covid_infected">Infected</label>
+                        <div class="col-lg-2">
+                            <input type="radio" name="covid_infected" id="covid_infected" value="positive">
+                            <label for="covid_infected">Positive</label>
+                        </div>
+
+                    </div>
+                    <div class="row input-field">
+                        <label class="col-lg-2 control-label" for="covid_infected">Date</label>
+                        <div class='col-lg-4'>
+                            <div class="form-group">
+                                <div id="filterDate2">
+
+                                    <!-- Datepicker as text field -->
+                                    <div class="input-group date" data-date-format="yyyy-mm-dd">
+                                        <input type="text" name="date" class="form-control" placeholder="yyyy-mm-dd">
+                                        <div class="input-group-addon">
+                                            <span class="glyphicon glyphicon-th"></span>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+            <div class="row input-field">
+                <div class="col-lg-6">
+                    <button class="btn btn-primary btn-block mb-4 button">Update covid status</button>
+                </div>
+            </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <script>
+        $('.input-group.date').datepicker({ format: "yyyy-mm-dd", autoclose: true, orientation: "bottom left" });
+
+    </script>
+</body>

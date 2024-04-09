@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Home Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script src='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.js'></script>
+  <link href='https://api.mapbox.com/mapbox-gl-js/v2.8.2/mapbox-gl.css' rel='stylesheet' />
+  <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+  <link rel="stylesheet" href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css" type="text/css">
+
+  <style>
+    .geocoder {
+    position: absolute;
+    z-index: 1;
+    width: 50%;
+    left: 50%;
+    margin-left: -25%;
+    top: 10px;
+    }
+    .mapboxgl-ctrl-geocoder {
+    min-width: 100%;
+    }
+    #map {
+    margin-top: 75px;
+    }
+    </style>
+
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="navbar-header navbar-title">
+            <a class="navbar-brand navbar-title" href="#">Home</a>
+          </div>
+        </div>
+        <div class="col">
+          <ul class="nav navbar-nav">
+            <li class="active"><a href="/homepage">Home</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/checkContact">Check Covid Contacts</a></li>
+            <li><a href="/userLogout">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container">
+    <h3 class="text-primary animation a1">Welcome back!</h3>
+    <hr>
+    <div class="row">
+      <div class="col-lg-9">
+        <div id='map' style='width: 1000px; height: 400px;'></div>
+        <div id="geocoder" class="geocoder"></div>
+          </div>
+
+    </div>
+    <script>
+    const pois = { type:'FeatureCollection', features: <%- JSON.stringify(pois) %>}
+    </script>
+
+<script src="../javascripts/homePageMap.js"></script>
+</body>
+
+</html>

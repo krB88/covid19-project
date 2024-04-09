@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Edit Poi</title>
+    <meta name="description" content="">
+    <meta name="viewport" , initial-scale=1">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="wrapper login-form"" >
+        <h1>Edit Point of Interest</h1>
+<hr>
+        <div class=" col-lg-9 personal-info">
+            <form action="/pois/<%=poi._id%>?_method=PUT" method="post">
+                <h3>Details</h3>
+                <div class="row input-field">
+                    <label class="col-lg-2 control-label" for="username">Name</label>
+                    <div class="col-lg-5">
+                        <input type="text" name="name" id="name" class="form-control col-lg-6"
+                            value="<%=poi.properties.name%>">
+                    </div>
+                </div>
+                <br>
+                <div class="row input-field">
+                    <label class="col-lg-2 control-label" for="address">Address</label>
+                    <div class="col-lg-5">
+                        <input type="text" name="address" id="address" class="form-control col-lg-6"
+                            value="<%=poi.properties.address%>">
+                    </div>
+                </div>
+                <br>
+                <div class="row input-field">
+                    <label class="col-lg-2 control-label" for="address">Tags</label>
+                    <div class="col-lg-5">
+                        <input type="array" name="types[]" id="types" class="form-control col-lg-6"
+                            value="<%=poi.properties.types%>">
+                    </div>
+                </div>
+                <br>
+                <h3>Coordinates</h3>
+                <div class="row">
+                    <label class="col-lg-2 control-label" for="latitude">Latitude</label>
+                    <div class="col-lg-5">
+                        <input type="text" name="coordinates[lat]" id="latitude" class="form-control col-lg-6"
+                            value="<%=poi.geometry.coordinates[1]%>">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <label class="col-lg-2 control-label" for="longtitude">Longtitude</label>
+                    <div class="col-lg-5">
+                        <input type="text" name="coordinates[lng]" id="longtitude" class="form-control col-lg-6"
+                            value="<%=poi.geometry.coordinates[0]%>">
+                    </div>
+                </div>
+                <br>
+                <h3>Rating</h3>
+                <div class="row">
+                    <label class="col-lg-2 control-label" for="rating">Rating Score</label>
+                    <div class="col-lg-5">
+                        <input type="text" name="rating" id="rating" class="form-control col-lg-6"
+                            value="<%=poi.properties.rating%>">
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <label class="col-lg-2 control-label" for="rating_n">Reviews</label>
+                    <div class="col-lg-5">
+                        <input type="text" name="rating_n" id="rating_n" class="form-control col-lg-6"
+                            value="<%=poi.properties.rating_n%>">
+                    </div>
+                </div>
+                <br>
+                <div class="row input-field">
+                    <div class="col-lg-6">
+                        <button class="btn btn-primary btn-block mb-4 button" role="button">Update</button>
+                    </div>
+                </div>
+                <br>
+                <div class="row input-field">
+                    <div class="col-lg-6">
+                        <a class="btn btn-primary btn-block mb-4 button" href="/pois/<%=poi._id%>"
+                            type="button">Back</a>
+                    </div>
+                </div>
+
+
+            </form>
+        </div>
+    </div>
+    </div>
+</body>
+
+</html>

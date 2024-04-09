@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Statistics</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="..public/css/styles.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+
+  <nav class="navbar navbar-default">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <div class="navbar-header navbar-title">
+            <a class="navbar-brand navbar-title" href="#">Statistics</a>
+          </div>
+        </div>
+        <div class="col">
+          <ul class="nav navbar-nav">
+            <li><a href="/homepage">Home</a></li>
+            <li class="active"><a href="/statistics">Statistics</a></li>
+            <li><a href="/profile">Profile</a></li>
+            <li><a href="/userLogout">Log Out</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h3>Active Covid Cases 
+    </h3>
+    <div class="chart-container"
+      style="height:600px; width:600px; margin-top: 50px; margin-right: 150px; margin-left: 250px;">
+      <canvas id="myChart" width="400" height="400"></canvas>
+    </div>
+
+  </div>
+
+  <script>
+    var visits = <%= visits %>  
+    console.log(visits);   
+    var users = <%= users %>  
+    console.log(users);    
+    var active = <%= active %>  
+    console.log(active);            
+ </script>
+
+  <script>
+    const ctx = document.getElementById('myChart');
+    const myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Total Visits'],
+        datasets: [{
+          label: '# of Visits',
+          data: [visits],
+          backgroundColor: [
+            'rgba(0, 88, 255, 0.7)'
+            
+          ],
+          borderColor: [
+            'rgba(0, 88, 255, 1)'
+          ],
+          borderWidth: 1
+        }]
+      }
+    });
+  </script>
+
+  
+
+  <div class="container">
+    <h3>Visits</h3>
+    <div class="chart-container"
+      style="height:600px; width:600px; margin-top: 50px; margin-right: 150px; margin-left: 250px;">
+      <canvas id="myChart2" width="400" height="400"></canvas>
+    </div>
+
+  </div>
+
+  <script>
+    const ctx2 = document.getElementById('myChart2');
+    const myChart2 = new Chart(ctx2, {
+      type: 'doughnut',
+      data: {
+        labels: ['Covid Uninfected', 'Covid infected'],
+        datasets: [{
+          label: '# of Positive Users',
+          data: [users-active, active],
+          backgroundColor: [
+            'rgba(75, 192, 192, 0.2)',
+            'rgba(255, 99, 132, 0.2)'
+          ],
+          borderColor: [
+            'rgba(75, 192, 192, 1)',
+            'rgba(255, 99, 132, 1)'          
+          ],
+          borderWidth: 1
+        }]
+      }
+    });
+  </script>
+
+</body>
+
+</html>

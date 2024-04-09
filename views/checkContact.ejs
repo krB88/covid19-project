@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Covid Contacts</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="../css/styles.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-sm">
+                    <div class="navbar-header navbar-title">
+                        <a class="navbar-brand navbar-title" href="#">Covid Contacts</a>
+                    </div>
+                </div>
+                <div class="col">
+                    <ul class="nav navbar-nav">
+                        <li><a href="/homepage">Home</a></li>
+                        <li><a href="/profile">Profile</a></li>
+                        <li class="active"><a href="/checkContact">Check Covid Contacts</a></li>
+                        <li><a href="/userLogout">Log Out</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div class="container bootstrap snippets bootdey">
+        <h3 class="text-primary animation a1">Covid Contacts</h3>
+        <hr>
+        <% if (user_visits.length == 0 ){%>
+            <h3 class="text animation a2">Hooray! You haven't been in contact with an active covid case the last 7 days!</h3>
+        <%}else{%>
+            <%for(visit of user_visits){%>
+                <ul>
+                    <li style="font-size:20px">A new covid case detected in <b><%-visit.poiName%><b> <br/></li>
+                        <p> Visited : <%-visit.createdAt.getDate()%>.<%-visit.createdAt.getMonth() + 1%>.<%-visit.createdAt.getUTCFullYear()%> at <%-visit.createdAt.toString().split("G")%></p>
+                </ul>
+                
+            <%}%>
+        <%}%>
+    </div>
+        
+
+</body>
